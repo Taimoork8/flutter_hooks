@@ -10,6 +10,7 @@ class ExampleFour extends HookWidget {
   Widget build(BuildContext context) {
     final countDown = useMemoized(() => CountDown(from: 20));
     final notifier = useListenable(countDown);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
