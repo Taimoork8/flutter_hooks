@@ -25,54 +25,10 @@ class ExampleSeven extends HookWidget {
         children: [
           Row(
             children: [
-              TextButton(
-                onPressed: () {
-                  store.dispatch(Action.rotateLeft);
-                },
-                style: TextButton.styleFrom(
-                  side: const BorderSide(
-                    color: Colors.black,
-                    width: 1,
-                  ),
-                ),
-                child: const Text('Rotate Left'),
-              ),
-              TextButton(
-                onPressed: () {
-                  store.dispatch(Action.rotateRight);
-                },
-                style: TextButton.styleFrom(
-                  side: const BorderSide(
-                    color: Colors.black,
-                    width: 1,
-                  ),
-                ),
-                child: const Text('Rotate Right'),
-              ),
-              TextButton(
-                onPressed: () {
-                  store.dispatch(Action.lessVisible);
-                },
-                style: TextButton.styleFrom(
-                  side: const BorderSide(
-                    color: Colors.black,
-                    width: 1,
-                  ),
-                ),
-                child: const Text('- Visibale'),
-              ),
-              TextButton(
-                onPressed: () {
-                  store.dispatch(Action.moreVisible);
-                },
-                style: TextButton.styleFrom(
-                  side: const BorderSide(
-                    color: Colors.black,
-                    width: 1,
-                  ),
-                ),
-                child: const Text('+ Visibale'),
-              ),
+              RotateLeftButton(store: store),
+              RoataeRightButton(store: store),
+              DecreaseAlphaButton(store: store),
+              IncreaseAlphaButton(store: store),
             ],
           ),
           const SizedBox(
@@ -89,6 +45,106 @@ class ExampleSeven extends HookWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class RotateLeftButton extends StatelessWidget {
+  const RotateLeftButton({
+    super.key,
+    required this.store,
+  });
+
+  final Store<State, Action?> store;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        store.dispatch(Action.rotateLeft);
+      },
+      style: TextButton.styleFrom(
+        side: const BorderSide(
+          color: Colors.black,
+          width: 1,
+        ),
+      ),
+      child: const Text('Rotate Left'),
+    );
+  }
+}
+
+class RoataeRightButton extends StatelessWidget {
+  const RoataeRightButton({
+    super.key,
+    required this.store,
+  });
+
+  final Store<State, Action?> store;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        store.dispatch(Action.rotateRight);
+      },
+      style: TextButton.styleFrom(
+        side: const BorderSide(
+          color: Colors.black,
+          width: 1,
+        ),
+      ),
+      child: const Text('Rotate Right'),
+    );
+  }
+}
+
+class DecreaseAlphaButton extends StatelessWidget {
+  const DecreaseAlphaButton({
+    super.key,
+    required this.store,
+  });
+
+  final Store<State, Action?> store;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        store.dispatch(Action.lessVisible);
+      },
+      style: TextButton.styleFrom(
+        side: const BorderSide(
+          color: Colors.black,
+          width: 1,
+        ),
+      ),
+      child: const Text('- Visibale'),
+    );
+  }
+}
+
+class IncreaseAlphaButton extends StatelessWidget {
+  const IncreaseAlphaButton({
+    super.key,
+    required this.store,
+  });
+
+  final Store<State, Action?> store;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        store.dispatch(Action.moreVisible);
+      },
+      style: TextButton.styleFrom(
+        side: const BorderSide(
+          color: Colors.black,
+          width: 1,
+        ),
+      ),
+      child: const Text('+ Visibale'),
     );
   }
 }
