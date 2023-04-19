@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testingflutterhooks/example3.dart';
+import 'package:testingflutterhooks/example4.dart';
 
 void main() async {
   runApp(
@@ -9,7 +9,7 @@ void main() async {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ExampleThree(),
+      home: const ExampleFour(),
     ),
   );
 }
