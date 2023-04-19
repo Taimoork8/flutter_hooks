@@ -10,7 +10,7 @@ class HomeScreen extends HookWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(dateTime.data ?? "Home Page"),
+        title: Text(dateTime.data ?? "Example 1"),
       ),
     );
   }
